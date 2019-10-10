@@ -1,3 +1,11 @@
 language: node_js
 node_js:
  - "node"
+script: "sbt clean coverage test"
+
+after_success: "sbt coveralls"
+
+notifications:
+  email:
+    recipients:
+      - alamiir.ashraf@gmail.com
